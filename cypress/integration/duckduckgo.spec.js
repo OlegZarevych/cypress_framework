@@ -9,5 +9,7 @@ describe('DuckDuckGo main page', () => {
         const text = 'Hello, World'
       cy.get('.content-wrap--home').should('be.visible')
       cy.get(inputCssSelector).type(text, {force: true})
+      cy.get('#search_button_homepage').click({force: true})
+      cy.get('.results--main').should('exist')
     })
 })
